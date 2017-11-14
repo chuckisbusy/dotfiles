@@ -83,3 +83,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vmd='/Applications/VMD\ 1.9.3.app/Contents/MacOS/startup.command'
