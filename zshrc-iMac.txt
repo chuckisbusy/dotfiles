@@ -103,7 +103,7 @@ bindkey -s "^[Ow" "7"
 bindkey -s "^[Ox" "8"
 bindkey -s "^[Oy" "9"
 # + -  * / =
-bindkey -s "^[Ol” “+”
+bindkey -s "^[Ol" "+"
 bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
