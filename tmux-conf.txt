@@ -1,0 +1,24 @@
+# Put hostname time and date in the status bar
+set -g status-right "#[fg=black,bold] #h #[default] %I:%M %p %d %b %Y"
+
+# Update the status bar every sixty seconds (for the time)
+set -g status-interval 10
+
+# Start with window 1 (instead of 0)
+set -g base-index 1
+
+# Start with pane 1 (instead of 0)
+set -g pane-base-index 1
+
+# Move status bar over to the left, if neccessary
+set -g status-right-length 200
+
+# Sets terminal to xterm colors and fixes window name
+set -g default-terminal "xterm-256color"
+
+# Change default scroll history from 2000 to 500000
+set-option -g history-limit 500000
+
+# Enable scrolling with mouse
+set -g mouse on        #For tmux version 2.1 and up
+#set -g mode-mouse on   #For tmux versions < 2.1
