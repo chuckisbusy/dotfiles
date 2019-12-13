@@ -83,7 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vmd='/Applications/VMD\ 1.9.3.app/Contents/MacOS/startup.command'
 alias m-work='sshfs cad234@10.164.210.37:/home/cad234 /Users/chuck/Workstation -o volname=Workstation -o follow_symlinks'
 alias m-dlx='sshfs cad234@dlx.uky.edu:/home/cad234 /Users/chuck/DLX -o volname=DLX -o follow_symlinks'
 alias m-lcc='sshfs cad234@lcc.uky.edu:/home/cad234 /Users/chuck/LCC -o volname=LCC -o follow_symlinks'
