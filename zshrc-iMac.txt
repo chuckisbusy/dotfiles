@@ -83,7 +83,10 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vmd='/Applications/VMD\ 1.9.3.app/Contents/MacOS/startup.command'
+alias m-syno='sshfs chuck@10.0.1.12:/ /Volumes/Synology -o volname=Synology -o follow_symlinks'
+alias m-work='sshfs cad234@10.164.210.37:/home/cad234 /Users/chuck/Workstation -o volname=Workstation -o follow_symlinks'
+alias m-dlx='sshfs cad234@dlx.uky.edu:/home/cad234 /Users/chuck/DLX -o volname=DLX -o follow_symlinks'
+alias m-lcc='sshfs cad234@lcc.uky.edu:/home/cad234 /Users/chuck/LCC -o volname=LCC -o follow_symlinks'
 
 # Enable Keypad
 # 0 . Enter
@@ -108,3 +111,22 @@ bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 bindkey -s "^[OX" "="
+
+upgrade() {
+	# updates system updates, mac app store, homebrew packages
+	softwareupdate -i
+	mas upgrade
+	brew update && brew upgrade
+	brew cleanup -s
+	for app in `brew cask outdated --quiet`; 
+	do 
+		brew cask install --force $app; 
+	done
+	brew cask cleanup
+}
+outdated() {
+	softwareupdate -l
+	mas outdated
+	brew outdated
+	brew cask outdated
+}
