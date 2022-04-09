@@ -15,8 +15,9 @@ set two_sided_lighting, 0
 set cartoon_side_chain_helper, on
 set ray_shadows, 0
 set stick_ball, on
-set stick_ball_ratio, -1.0
-set valence, 0
+set valence, 1
+set valence_mode, 0
+set stick_ball_ratio, 1.0
 set depth_cue, 1
 clip near, 100
 clip far, -100
