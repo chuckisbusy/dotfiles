@@ -117,15 +117,10 @@ upgrade() {
 	softwareupdate -i
 	mas upgrade
 	brew update && brew upgrade
-	for app in `brew cask outdated --quiet`; 
-	do 
-		brew cask install --force $app; 
-	done
 	brew cleanup -s
 }
 outdated() {
 	softwareupdate -l
 	mas outdated
 	brew outdated
-	brew cask outdated
 }
