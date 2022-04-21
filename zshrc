@@ -83,4 +83,47 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vmd='/Applications/VMD\ 1.9.3.app/Contents/MacOS/startup.command'
+alias m-syno='sshfs chuck@192.168.1.248:/ /Users/chuck/Synology -o volname=Synology -o follow_symlinks'
+alias m-work='sshfs cad234@10.164.210.37:/home/cad234 /Users/chuck/Workstation -o volname=Workstation -o follow_symlinks'
+alias m-dlx='sshfs cad234@dlx.uky.edu:/home/cad234 /Users/chuck/DLX -o volname=DLX -o follow_symlinks'
+alias m-lcc='sshfs cad234@lcc.uky.edu:/home/cad234 /Users/chuck/LCC -o volname=LCC -o follow_symlinks'
+alias m-dell='sshfs chuck@192.168.1.249:/home/chuck /Users/chuck/Dell -o volname=Dell -o follow_symlinks'
+alias pymol=/Applications/PyMOL.app/Contents/MacOS/PyMOL
+alias vmd='/Applications/VMD\ 1.9.4a55-arm64-Rev11.app/Contents/MacOS/startup.command'
+
+# Enable Keypad
+# 0 . Enter
+bindkey -s "^[Op" "0"
+bindkey -s "^[On" "."
+bindkey -s "^[OM" "^M"
+# 1 2 3
+bindkey -s "^[Oq" "1"
+bindkey -s "^[Or" "2"
+bindkey -s "^[Os" "3"
+# 4 5 6
+bindkey -s "^[Ot" "4"
+bindkey -s "^[Ou" "5"
+bindkey -s "^[Ov" "6"
+# 7 8 9
+bindkey -s "^[Ow" "7"
+bindkey -s "^[Ox" "8"
+bindkey -s "^[Oy" "9"
+# + -  * / =
+bindkey -s "^[Ol" "+"
+bindkey -s "^[Om" "-"
+bindkey -s "^[Oj" "*"
+bindkey -s "^[Oo" "/"
+bindkey -s "^[OX" "="
+
+upgrade() {
+	# updates system updates, mac app store, homebrew packages
+	softwareupdate -i
+	mas upgrade
+	brew update && brew upgrade
+	brew cleanup -s
+}
+outdated() {
+	softwareupdate -l
+	mas outdated
+	brew update && brew outdated
+}
