@@ -1,0 +1,11 @@
+" Turn syntax highlighting on.
+syntax on
+
+" Add numbers to each line on the left-hand side.
+set number
+
+" Do not wrap lines. Allow long lines to extend as far as the line goes.
+set nowrap
+
+" Use highlighting when doing a search.
+set hlsearch

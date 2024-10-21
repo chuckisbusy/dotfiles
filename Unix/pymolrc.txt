@@ -1,0 +1,23 @@
+bg_color white
+space cmyk
+set light_count, 1
+set specular, off
+set cartoon_highlight_color, grey50
+set cartoon_fancy_helices, on
+set stick_ball, on
+set cartoon_smooth_loops, off
+set cartoon_discrete_colors, on
+set cartoon_sampling, 14
+set ribbon_as_cylinders, on
+set ray_opaque_background, off
+set volume_mode, 0
+set two_sided_lighting, 0
+set cartoon_side_chain_helper, on
+set ray_shadows, 0
+set stick_ball, on
+set valence, 1
+set valence_mode, 0
+set stick_ball_ratio, 1.0
+set depth_cue, 1
+clip near, 100
+clip far, -100
