@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting cp colored-man-pages colorize zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting screen cp colored-man-pages zsh-autosuggestions zsh-autopair supercharge)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -74,6 +74,8 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+export PATH=/usr/local/texlive/2024/bin/universal-darwin:$PATH
+export PATH=/Users/chuck/Library/Python/3.11/bin:$PATH
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -84,36 +86,18 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias m-syno='sshfs chuck@192.168.1.248:/ /Users/chuck/Synology -o volname=Synology -o follow_symlinks'
-alias m-work='sshfs cad234@10.164.210.37:/home/cad234 /Users/chuck/Workstation -o volname=Workstation -o follow_symlinks'
-alias m-dlx='sshfs cad234@dlx.uky.edu:/home/cad234 /Users/chuck/DLX -o volname=DLX -o follow_symlinks'
+alias m-work='sshfs cadeniran@10.13.97.87:/home/cadeniran /Users/chuck/Workstation -o volname=Workstation -o follow_symlinks'
 alias m-lcc='sshfs cad234@lcc.uky.edu:/home/cad234 /Users/chuck/LCC -o volname=LCC -o follow_symlinks'
 alias m-dell='sshfs chuck@192.168.1.249:/home/chuck /Users/chuck/Dell -o volname=Dell -o follow_symlinks'
+alias m-ibis='sshfs cadeniran@ibis.butler.edu:/home/cadeniran /Users/chuck/ibis -o volname=ibis -o follow_symlinks'
+alias m-pardus='sshfs cadeniran@pardus.butler.edu:/home/cadeniran /Users/chuck/pardus -o volname=pardus -o follow_symlinks'
+alias m-stor='sshfs cadeniran@ibis.butler.edu:/data/storage/cadeniran /Users/chuck/storage -o volname=storage -o follow_symlinks -o compression=no -o cache=yes -o auto_cache -o kernel_cache -o Ciphers=aes128-ctr'
 alias pymol=/Applications/PyMOL.app/Contents/MacOS/PyMOL
 alias vmd='/Applications/VMD\ 1.9.4a55-arm64-Rev11.app/Contents/MacOS/startup.command'
 
-# Enable Keypad
-# 0 . Enter
-bindkey -s "^[Op" "0"
-bindkey -s "^[On" "."
-bindkey -s "^[OM" "^M"
-# 1 2 3
-bindkey -s "^[Oq" "1"
-bindkey -s "^[Or" "2"
-bindkey -s "^[Os" "3"
-# 4 5 6
-bindkey -s "^[Ot" "4"
-bindkey -s "^[Ou" "5"
-bindkey -s "^[Ov" "6"
-# 7 8 9
-bindkey -s "^[Ow" "7"
-bindkey -s "^[Ox" "8"
-bindkey -s "^[Oy" "9"
-# + -  * / =
-bindkey -s "^[Ol" "+"
-bindkey -s "^[Om" "-"
-bindkey -s "^[Oj" "*"
-bindkey -s "^[Oo" "/"
-bindkey -s "^[OX" "="
+[[ -s /Users/chuck/.autojump/etc/profile.d/autojump.sh ]] && source /Users/chuck/.autojump/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
 
 upgrade() {
 	# updates system updates, mac app store, homebrew packages
@@ -125,5 +109,5 @@ upgrade() {
 outdated() {
 	softwareupdate -l
 	mas outdated
-	brew outdated
+	brew update && brew outdated
 }
