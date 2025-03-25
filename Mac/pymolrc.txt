@@ -4,7 +4,6 @@ set light_count, 1
 set specular, off
 set cartoon_highlight_color, grey50
 set cartoon_fancy_helices, on
-set stick_ball, on
 set cartoon_smooth_loops, off
 set cartoon_discrete_colors, on
 set cartoon_sampling, 14
